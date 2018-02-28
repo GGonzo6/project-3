@@ -68,3 +68,39 @@ for everyday in individual_days:
         if i == x:
             count =count+1
         daydict [x] = [count]
+        
+        
+        print ("\n2.Requests that were made on each day? week? month?")
+print ("\nDays:")
+for a, b in daydict.items():
+    print(a, b)
+
+
+'''print (week)'''
+print ("\nMonths:")
+print (" ")
+for x, y in month.items():
+    print(x, y)
+
+
+
+
+#3
+print ("\n3.What percentage of the requests were not successful (any 4xx status code)?")
+
+US = re.findall(r'\s[4][0-9][0-9] ', response)
+
+percent = len(US)/len(total)
+print(" ")
+print (round(percent*100,2),"%")
+
+
+#4
+print("\n4.What percentage of the requests were redirected elsewhere (any 3xx codes)?")
+
+
+S = re.findall(r'\s[3][0-9][0-9] ', response)
+
+percents = len(S)/len(total)
+print(" ")
+print (round(percents*100,2),"%")
