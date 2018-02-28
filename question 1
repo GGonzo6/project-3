@@ -1,0 +1,23 @@
+import urllib.request
+import urllib.parse
+import re
+import datetime
+import itertools
+import operator
+
+print (input("\nHello, Press enter to begin!"))
+
+url = 'https://s3.amazonaws.com/tcmg476/http_access_log'
+response = str(urllib.request.urlopen(url).read())
+
+file = open("adam.txt","w") 
+file.write(response)
+
+
+#1
+total= ()
+total = re.findall(r' - - ', response)
+
+print ("\n1.The total requests that were made in the time period represented in the log?")
+print (" ")
+print (len(total))
